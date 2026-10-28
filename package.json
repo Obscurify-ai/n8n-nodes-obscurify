@@ -56,5 +56,9 @@
 	},
 	"bugs": {
 		"url": "https://github.com/Obscurify-ai/n8n-nodes-obscurify/issues"
+	},
+	"publishConfig": {
+		"access": "public",
+		"provenance": true
 	}
 }
