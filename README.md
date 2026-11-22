@@ -2,7 +2,7 @@
 
 This is an n8n community node. It lets you use [Obscurify.ai](https://obscurify.ai/?utm_source=n8n) in your n8n workflows.
 
-Obscurify.ai is a privacy-focused AI service with an OpenAI-compatible API to 200+ models (GPT, Claude, Gemini, DeepSeek, Qwen, Llama, Mistral and more). Text requests only use zero-data-retention routes, prompts and responses aren't stored on Obscurify.ai's servers, and accounts are a random account number with no email.
+Obscurify.ai is a privacy-focused AI service with an OpenAI-compatible API to 200+ models (GPT, Claude, Gemini, DeepSeek, Qwen, Llama, Mistral and more). Prompts and responses aren't stored on Obscurify.ai's servers, and an account is a random account code with no email. Models in the "Zero retention" category of `/v1/models` run only on zero-data-retention routes, which rely on their providers' published policies. Other models follow their provider's own policy.
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/sustainable-use-license/) workflow automation platform.
 
@@ -32,7 +32,7 @@ The node can also be used as a tool by n8n's AI Agent.
 
 ## Credentials
 
-1. Create an account at [obscurify.ai](https://obscurify.ai/?utm_source=n8n). You get a random account number: no email, no password.
+1. Create an account at [obscurify.ai](https://obscurify.ai/?utm_source=n8n). You get a random account code: no email, no password. Save it, because it can't be recovered.
 2. Add a balance on the account page. The API works on every plan with a positive balance. Frontier models need the Casual plan or higher, and uncensored models need Pro.
 3. On [obscurify.ai/account](https://obscurify.ai/account), click **Show API Key**.
 4. In n8n, create an **Obscurify.ai API** credential and paste the `sk-obs1_...` key. Leave **Base URL** at `https://obscurify.ai/v1` unless you reach Obscurify.ai through a proxy.
@@ -49,7 +49,7 @@ A minimal workflow: **Manual Trigger → Obscurify.ai (Chat: Message a Model)**.
 
 To get structured data back, turn on **Options → JSON Output** and ask for JSON in the prompt. Then parse `{{ JSON.parse($json.content) }}`.
 
-Prices per model: [obscurify.ai/model_cards](https://obscurify.ai/model_cards?utm_source=n8n). Each request is charged to your Obscurify.ai balance at that model's price.
+Prices per model: [obscurify.ai/models](https://obscurify.ai/models?utm_source=n8n). Each request is charged to your Obscurify.ai balance at that model's price.
 
 ## Development
 
